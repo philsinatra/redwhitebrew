@@ -1,0 +1,49 @@
+.navbar {
+  background-color: #313027;
+  // max-width: 750px;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @include breakpoint($papabear) { background-color: transparent; }
+  // @include breakpoint($papabear) {
+  //   width: 50%;
+  // }
+}
+
+a.btn-menu {
+  @include link-colors($cs-primary, $cs-yellow);
+  text-decoration: none;
+}
+
+.nav-main {
+  margin-bottom: 0;
+  margin-top: 1em;
+
+  li {
+    display: block;
+    list-style: none;
+
+    a {
+      @include link-colors($cs-primary, $cs-yellow);
+      border-top: 1px solid $cs-muted;
+      display: block;
+      font-size: em-font(18px);
+      padding-bottom: .5em;
+      padding-top: .5em;
+      text-decoration: none;
+      width: 100%;
+
+      span.icon {
+        display: inline-block;
+        height: 30px;
+        margin-right: 10px;
+        text-align: center;
+        width: 42px;
+      }
+    }
+
+    &:last-child a { border-bottom: 1px solid $cs-muted; }
+  }
+}

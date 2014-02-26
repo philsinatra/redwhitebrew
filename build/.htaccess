@@ -1,0 +1,125 @@
+# htaccess starter template
+# v20121004 htaccessbook.com/changelog
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
+# Enable symbolic links
+Options +FollowSymLinks
+
+# Disable index views
+Options All -Indexes
+
+# Specify the default language
+DefaultLanguage en
+
+# Specify the default character set
+AddDefaultCharset utf-8
+
+# Disable the server signature
+ServerSignature Off
+
+# Disable ETags
+# FileETag none
+# <IfModule mod_headers.c>
+# Header unset ETag
+# </IfModule>
+
+# Enable basic spell-checking
+<IfModule mod_speling.c>
+  CheckSpelling On
+</IfModule>
+
+# Enable file compression
+<IfModule mod_deflate.c>
+  <IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ \
+      ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+  </IfModule>
+  <IfModule mod_filter.c>
+    FilterDeclare COMPRESS
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $text/css
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $text/html
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $text/javascript
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $text/plain
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $text/xml
+    FilterProvider COMPRESS DEFLATE resp=Content-Type $application/javascript
+    FilterChain COMPRESS
+    FilterProtocol COMPRESS DEFLATE change=yes;byteranges=no
+  </IfModule>
+  <IfModule !mod_filter.c>
+    AddOutputFilterByType DEFLATE text/css text/html text/plain text/xml
+    AddOutputFilterByType DEFLATE text/javascript application/javascript
+  </IfModule>
+  <IfModule mod_setenvif.c>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+  </IfModule>
+  <IfModule mod_headers.c>
+    Header append Vary User-Agent env=!dont-vary
+    Header append Vary Accept-Encoding
+  </IfModule>
+</IfModule>
+
+# Optimize cache-control
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 1 seconds"
+  ExpiresByType text/xml "access plus 1 seconds"
+  ExpiresByType text/plain "access plus 1 seconds"
+  ExpiresByType application/xml "access plus 1 seconds"
+  ExpiresByType application/rss+xml "access plus 1 seconds"
+  ExpiresByType application/json "access plus 1 seconds"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/x-javascript "access plus 1 week"
+  <IfModule mod_headers.c>
+    Header unset ETag
+    Header unset Pragma
+    Header unset Last-Modified
+    Header append Cache-Control "public, no-transform, must-revalidate"
+  </IfModule>
+</IfModule>
+
+# Canonical URLs
+# uncomment one of the following to enable either technique
+
+# Remove www
+#<IfModule mod_rewrite.c>
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#</IfModule>
+
+# Require www
+#<IfModule mod_rewrite.c>
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^(.*)$ [NC]
+# RewriteRule ^(.*)$ http://www.%1$1 [R=301,L]
+#</IfModule>
+
+# Block hotlink requests
+# uncomment to enable and edit the domain name and list of file types
+
+#<IfModule mod_rewrite.c>
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?example.com [NC]
+# RewriteRule \.(gif|jpe?g?|png)$ - [NC,F,L]
+#</IfModule>
+
+# Custom error pages
+# uncomment to enable and edit each file path
+
+#ErrorDocument 400 /errors/400.html
+#ErrorDocument 401 /errors/401.html
+#ErrorDocument 403 /errors/403.html
+#ErrorDocument 404 /errors/404.html
+#ErrorDocument 500 /errors/500.html

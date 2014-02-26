@@ -1,0 +1,57 @@
+// Colours
+// ------------------------------------------------------------
+
+$cs-primary                     : #FAF3C5;
+$cs-secondary                   : #7A723C;
+$cs-yellow                      : #FBEA7A;
+$cs-muted                       : #7A7761;
+$cs-flat                        : #C7C19D;
+
+$cs-white                       : #ffffff;
+$cs-black                       : #000000;
+
+$cs-gray-light                  : #D5D6D2;
+$cs-gray-medium                 : #A7A8AA;
+$cs-gray-dark                   : #4D4F53;
+
+$cs-red-wine                    : #570a08;
+
+// Fonts, measure, leading and typefaces
+// ------------------------------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Fondamento);
+
+$font-sansserif  : Helvetica, Arial, sans-serif;
+$font-serif      : 'Fondamento', Times, serif;
+
+// Fonts size and line height defaults for our calculations
+
+$base-font-size             : 16px;         // Sets the browser default size. Shouldn't need to change this.
+$base-line-height           : 8px;          // Baseline grid. Set to a sensible, small size.
+$round-to-nearest-half-line : false;        // Round the line height to the nearest half line height. Off by default
+
+
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+@function emify($target, $context) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+// Make px to ems using base-font-size
+// echo as: font-size: em-font(#px);
+
+@function em-font($target, $context: $base-font-size) {
+   @return emify($target, $context);
+}
+
+
+// Make px to ems using base-line-height
+// echo as: font-size: em-base(#px);
+
+@function em-base($target, $context: $base-line-height) {
+   @return emify($target, $context);
+}
+

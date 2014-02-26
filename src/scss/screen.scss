@@ -1,0 +1,100 @@
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+@import "compass/utilities";
+
+@import "singularitygs";
+@import "bourbon";
+
+@import "modules/settings";
+@import "modules/mixins";
+
+// @import "vendor/font-awesome.min";
+// @import "vendor/pure-buttons";
+// @import "vendor/pure-forms";
+
+@import "partials/grid";
+@import "partials/utilities";
+@import "partials/typeography";
+@import "partials/forms";
+@import "partials/header";
+
+@import "vendor/jquery.sidr.dark";
+
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// Use clearfix if you need general clearfixing
+.clearfix       { @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix     { @include pie-clearfix; }
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width      { max-width: 100%; height: auto; }
+
+
+
+// Global Styles
+
+* { @include box-sizing(border-box); }
+
+html, body { height: 100%; }
+
+body {
+  font: 100%/1.4 $font-serif;
+  @include advancedtype;
+}
+
+main { display: block; }
+
+img, embed, object, video {
+  @extend .max-width;
+}
+
+body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  &.index {
+    background-image: url(../images/bg-home-large.jpg);
+  }
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 750px;
+  min-height: 100vh;
+  width: 90%;
+
+  @include breakpoint($papabear) {
+    margin: 0;
+    width: 50%;
+
+    left: 3em;
+    position: relative;
+  }
+}
+
+body.index .main {
+  background: url(../images/paper-wine.jpg) repeat;
+  background-color: #f6efc3;
+}
+
+.post {
+  padding: 5em 2em 2em;
+  word-break: break-word;
+
+  @include breakpoint($mommabear) {  padding: 5em; }
+
+}
