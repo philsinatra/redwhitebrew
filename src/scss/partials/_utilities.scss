@@ -17,6 +17,13 @@
   }
 }
 
+/* ::Position styles */
+/* ------------------------------------------------------------ */
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+/* ::Type styles */
+/* ------------------------------------------------------------ */
 .is-uppercase {
   text-transform: uppercase;
   letter-spacing: 1px;

@@ -1,0 +1,33 @@
+.article-footer {
+  .sharethis {
+    font-size: 80%;
+    text-align: center;
+
+    @include breakpoint($mommabear) {
+      font-size: 100%;
+      text-align: right;
+    }
+
+    a.social-icon {
+      img {
+        $iconsize: 35px;
+        height: $iconsize;
+        margin-left: .25em;
+        position: relative;
+        top: 10px;
+        width: $iconsize;
+
+        @include breakpoint($mommabear) {
+          opacity: .6;
+          @include fade_transition(opacity);
+        }
+      }
+
+      &:hover {
+        img {
+          @include breakpoint($mommabear) {  opacity: 1; }
+        }
+      }
+    }
+  }
+}

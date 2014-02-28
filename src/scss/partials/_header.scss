@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #313027;
+  background-color: $cs-red-wine;
   // max-width: 750px;
   padding: 1em;
   position: fixed;
@@ -26,7 +26,7 @@ a.btn-menu {
     list-style: none;
 
     a {
-      @include link-colors($cs-primary, $cs-yellow);
+      // @include link-colors($cs-yellow, $cs-secondary);
       border-top: 1px solid $cs-muted;
       display: block;
       font-size: em-font(18px);
@@ -46,4 +46,8 @@ a.btn-menu {
 
     &:last-child a { border-bottom: 1px solid $cs-muted; }
   }
+}
+
+.sidr-closeer {
+  margin: 0.96875em 1em;
 }

@@ -8,8 +8,8 @@
 @import "modules/settings";
 @import "modules/mixins";
 
-// @import "vendor/font-awesome.min";
-// @import "vendor/pure-buttons";
+@import "vendor/font-awesome.min";
+@import "vendor/pure-buttons";
 // @import "vendor/pure-forms";
 
 @import "partials/grid";
@@ -17,6 +17,7 @@
 @import "partials/typeography";
 @import "partials/forms";
 @import "partials/header";
+@import "partials/footer";
 
 @import "vendor/jquery.sidr.dark";
 
@@ -57,17 +58,23 @@ img, embed, object, video {
 }
 
 body {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $cs-flat;
 
   .wrapper {
     height: 100%;
     width: 100%;
   }
 
-  &.index {
-    background-image: url(../images/bg-home-large.jpg);
+  @include breakpoint($mommabear) {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.index   { background-image: url(../images/bg-home-large.jpg); }
+    &.wine    { background-image: url(../images/bg-wine-large.jpg); }
+    &.beer    { background-image: url(../images/bg-beer-large.jpg); }
+    &.spirits { background-image: url(../images/bg-spirits-large.jpg); }
+    &.events  { background-image: url(../images/bg-events-large.jpg); }
+    &.about { background-image: url(../images/bg-home-large.jpg); }
   }
 }
 
@@ -86,15 +93,18 @@ body {
   }
 }
 
-body.index .main {
-  background: url(../images/paper-wine.jpg) repeat;
-  background-color: #f6efc3;
-}
+body .main { background: url(../images/paper-wine.jpg) repeat; }
 
 .post {
   padding: 5em 2em 2em;
   word-break: break-word;
 
-  @include breakpoint($mommabear) {  padding: 5em; }
+  // @include breakpoint($mommabear) {  padding: 5em; }
 
+}
+
+.global-branding {
+  bottom: 1em;
+  position: fixed;
+  right: 1em;
 }
