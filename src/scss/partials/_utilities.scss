@@ -17,6 +17,12 @@
   }
 }
 
+.is-hidden-from-papa {
+  @include breakpoint($papabear) {
+    display: none;
+  }
+}
+
 /* ::Position styles */
 /* ------------------------------------------------------------ */
 .pull-left { float: left; }

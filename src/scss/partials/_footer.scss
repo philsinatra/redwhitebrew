@@ -31,3 +31,50 @@
     }
   }
 }
+
+footer {
+  background: $cs-red-wine;
+  color: $cs-primary;
+  padding: 2em 0;
+
+  a {
+    @include link-colors($cs-primary, $cs-yellow);
+    @include fade_transition(color);
+    text-decoration: none;
+  }
+
+  address {
+    margin-bottom: 1em;
+  }
+
+  ul.footer-nav {
+    margin: 0;
+
+    li {
+      list-style: none;
+      display: block;
+
+      a {
+        border-bottom: 1px solid lighten($cs-red-wine, 10%);
+        display: block;
+        padding: .5em;
+        text-decoration: none;
+      }
+
+      &:first-child {
+        a { border-top: 1px solid lighten($cs-red-wine, 10%); }
+      }
+    }
+  }
+
+  .footer-contact {
+    font-size: 1.125em;
+  }
+
+  .footer-branding {
+    margin-bottom: .5em;
+    text-align: center;
+    img { max-width: 200px; }
+    @include breakpoint($mommabear) { text-align: left; }
+  }
+}

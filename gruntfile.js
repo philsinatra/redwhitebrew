@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         }   // files
       }     // myTarget
     },      // uglify
+
     compass: {
       dev: {
         options: {
@@ -24,8 +25,26 @@ module.exports = function(grunt) {
         }   // options
       }     // dev
     },      // compass
+
+    processhtml: {
+      dist: {
+        files: {
+          'build/index.html':['src/index.html'],
+          'build/wine.html':['src/wine.html'],
+          'build/spirits.html':['src/spirits.html'],
+          'build/beer.html':['src/beer.html'],
+          'build/about.html':['src/about.html'],
+          'build/events.html':['src/events.html']
+        }   // files
+      }    // dist
+    },    // processhtml
+
     watch: {
       options: { livereload: true },
+      package_files: {
+        files: ['src/**/*.html'],
+        tasks: ['processhtml']
+      },    // package_files
       scripts: {
         files: ['src/js/*.js'],
         tasks: ['uglify']
@@ -44,6 +63,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-processhtml');
 
   // Default task
   grunt.registerTask('default','watch');
