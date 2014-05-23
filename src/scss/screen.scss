@@ -58,7 +58,7 @@ img, embed, object, video {
 }
 
 body {
-  background-color: $cs-flat;
+  background-color: $cs-black;
 
   .wrapper {
     height: 100%;
@@ -70,11 +70,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     &.index   { background-image: url(../images/bg-home-large.jpg); }
-    &.wine    { background-image: url(../images/bg-wine-large.jpg); }
+    &.wine    { background-image: url(../images/IMG_1952-large.jpg); }
     &.beer    { background-image: url(../images/bg-beer-large.jpg); }
     &.spirits { background-image: url(../images/bg-spirits-large.jpg); }
     &.events  { background-image: url(../images/bg-events-large.jpg); }
-    &.about { background-image: url(../images/bg-home-large.jpg); }
+    &.about { background-image: url(../images/IMG_1944-large.jpg); }
   }
 }
 
@@ -93,6 +93,12 @@ body {
   }
 }
 
+.branding {
+  // margin-bottom: 2em;
+  position: relative;
+  top: -1.5em;
+}
+
 body .main { background: url(../images/paper-wine.jpg) repeat; }
 
 .post {
@@ -107,4 +113,18 @@ body .main { background: url(../images/paper-wine.jpg) repeat; }
   bottom: 1em;
   position: fixed;
   right: 1em;
+}
+
+.glamore_shot {
+  margin-bottom: 1em;
+  text-align: center;
+
+  img { border: 1px solid black; }
+}
+
+.map {
+  max-width: 100%;
+  margin-bottom: 1em;
+
+  iframe { max-width: 100%; }
 }

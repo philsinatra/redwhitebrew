@@ -44,3 +44,5 @@ Thumbs.db
 node_modules
 build/images
 build/fonts
+build/media
+sftp-config.json

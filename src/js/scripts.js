@@ -1,25 +1,30 @@
-$(document).ready(function() {
-  $('#btn-oc').sidr({
-    displace  : false,
-    speed     : 'fast'
-  });
+/**
+ * Animated scroll to selected section
+ * @param  {string} target defines the container ID being scrolled to
+ * @return {number}        the time duration taken to scroll
+ */
+function scrollTarget (target) {
+  if ($(window).width() > 320) {
+    scrollOffset = 60;
+    duration = 500;
+  }
+  else {
+    scrollOffset = 80;
+    duration = 500;
+  }
+
+  $("html, body").animate({scrollTop: $("#" + target).offset().top - scrollOffset}, duration);
+
+  return duration;
+}
+
+$(function() {
 
   // Click event handlers ------------------------------------------------------
   //
-  /**
-   * Programatically close the sidr menu when close button is clicked
-   * @param  {event} e default click event
-   * @return {null}   no return
-   */
-  $('.sidr-close').click(function(e) {
+  $('.btn-menu').click(function(e) {
     e.preventDefault();
-    $.sidr('close', 'sidr');
+    var target = $(this).attr('href').substring(1);
+    var scroll = scrollTarget(target);
   });
-});
-
-$('nav #nav-main a').click(function(e) {
-  e.preventDefault();
-  var targetSection = $(this).attr('href').substring(1);
-  $('body').attr('class', '');
-  $('body').addClass(targetSection);
 });

@@ -1,15 +1,14 @@
 .navbar {
-  background-color: $cs-red-wine;
+  background-color: transparent;
   // max-width: 750px;
-  padding: 1em;
+  padding: .5em .75em;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 
-  @include breakpoint($papabear) { background-color: transparent; }
-  // @include breakpoint($papabear) {
-  //   width: 50%;
-  // }
+  @media (max-width: 767px) { background-color: $cs-red-wine; }
+  @include breakpoint($papabear) { display: none; }
 }
 
 a.btn-menu {
@@ -17,34 +16,38 @@ a.btn-menu {
   text-decoration: none;
 }
 
-.nav-main {
-  margin-bottom: 0;
-  margin-top: 1em;
+.navigation {
+  display: none;
 
-  li {
+  @include breakpoint($papabear) {
+    // @include linear-gradient(to right, transparent, black);
+    @include linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.75) 100%);
+
     display: block;
-    list-style: none;
+    padding: .5em;
+    right: 0;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 50%;
 
-    a {
-      // @include link-colors($cs-yellow, $cs-secondary);
-      border-top: 1px solid $cs-muted;
-      display: block;
-      font-size: em-font(18px);
-      padding-bottom: .5em;
-      padding-top: .5em;
-      text-decoration: none;
-      width: 100%;
+    ul.nav-main {
+      list-style: none;
+      margin-bottom: 0;
 
-      span.icon {
+      li {
         display: inline-block;
-        height: 30px;
-        margin-right: 10px;
-        text-align: center;
-        width: 42px;
+
+        a {
+          @include link-colors($cs-primary, $cs-yellow);
+          @include fade_transition(color);
+          display: inline-block;
+          font-size: 1.125em;
+          padding: .5em;
+          text-decoration: none;
+        }
       }
     }
-
-    &:last-child a { border-bottom: 1px solid $cs-muted; }
   }
 }
 
