@@ -6,25 +6,25 @@
 <!--[if gt IE 9]>  <html> <![endif]-->
 <!--[if !IE]><!--> <html>             <!--<![endif]-->
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<link rel="stylesheet" href="css/screen.css">
-<title>Red, White and Brew</title>
-<!--[if IE]>
-  <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<![endif]-->
-<!--[if lt IE 9]>
-<script src="js/vendor/html5shiv.js"></script>
-<script src="js/vendor/respond.min.js"></script>
-<![endif]-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/screen.css">
+  <title>Red, White and Brew</title>
+  <!--[if IE]>
+    <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/vendor/html5shiv.js"></script>
+  <script src="js/vendor/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body class="about">
   <div class="wrapper">
     <header role="banner">
       <div class="navbar">
-        <a id="btn-oc" class="btn-menu" href="#nav-footer">☰</a>
+        <a id="btn-oc" class="btn-menu" href="#sidr">☰</a>
       </div>
     </header>
     <div class="main">
@@ -32,24 +32,15 @@
         <div class="article-container">
           <article class="post">
             <div class="post-inner">
-              <div class="branding">
-                <img src="images/logo.jpg" height="94" width="255" alt="Red, White and Brew logo">
-              </div>
               <h1>About Us</h1>
               <p>Open Tuesday through Saturday from 11 am to 7 pm. Closed Sunday &amp; Monday</p>
+              <p>"A charming and creative boutique shop specializing in interesting and eclectic wine, beer and spirits."</p>
               <div class="glamore_shot">
-                <img src="images/IMG_1938.jpg" height="450" width="690" alt="store front">
+                <img src="images/storefront.jpg" height="319" width="426" alt="store front">
               </div>
-              <h1 class="quote">
-                "A charming and creative boutique shop specializing in interesting and eclectic wine, beer and spirits."
-              </h1>
-              <hr class="spacer">
               <p>That's what we always envisioned and what we always wanted - a small yet full shop where special attention to selection and our customers came first.  Our mission was simple:  Introduce fun to those who don't know it and emphasize it to those who do!</p>
-              <hr class="spacer">
-              <div class="glamore_shot"><img src="images/IMG_1941.jpg" height="450" width="690" alt="inside Red, White and Brew"></div>
-              <hr class="spacer">
               <p>At Red, White &amp; Brew we weed out the mediocre stuff and search out wines, beers &amp; liquors that are truly special and different.  We want our store to be a haven to the wine lover; a destination spot for the beer maven and an oasis to those who enjoy fine spirits.  We welcome special requests and we get to know our clientele - so we know what works well in our store.</p>
-              <hr class="soften">
+
               <address>
                 <a href="https://www.google.com/maps/place/33+High+St/@39.994038,-74.7877038,17z/data=!3m1!4b1!4m2!3m1!1s0x89c14886bdda145f:0xba5561277263740e" target="win_map">33 High Street <br>
                   Mount Holly, New Jersey 08060</a>
@@ -68,11 +59,14 @@
             <div class="article-footer">
               <div class="sharethis">
                 <p>Share this on:
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=http://redwhitebrew.net/about.html" class="social-icon fb-share-button" target="fb"><img src="images/facebook.png" height="80" width="80" alt="Facebook"></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=http://philsinatra.com" class="social-icon fb-share-button" target="fb"><img src="images/facebook.png" height="80" width="80" alt="Facebook"></a>
 
-                  <a href="https://twitter.com/home?status=http://redwhitebrew.net/about.html" class="social-icon" target="tweet"><img src="images/twitter.png" alt="Twitter"></a>
+                  <a href="https://twitter.com/home?status=http://philsinatra.com" class="social-icon" target="tweet"><img src="images/twitter.png" alt="Twitter"></a>
 
-                  <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%redwhitebrew.net/about.html" data-pin-do="buttonPin" data-pin-config="above" target="pintrest" class="social-icon"><img src="images/pinterest.png" alt="Pintrest"></a>
+                  <!-- <a href="#" class="social-icon"><img src="images/pinterest.png" alt="Pintrest"></a> -->
+                  <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fphilsinatra.com&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above" target="pintrest" class="social-icon"><img src="images/pinterest.png" alt="Pintrest"></a>
+                  <!-- Please call pinit.js only once per page -->
+                  <!-- <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script> -->
 
                 </p>
               </div>
@@ -81,59 +75,29 @@
         </div>
       </main>
     </div>
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col span7-2">
-            <div class="footer-contact">
-            <div class="footer-branding">
-  <img src="images/logo.jpg" alt="Red, White and Brew logo">
-</div>
-<p>Open Tuesday through Saturday from 11 am to 7 pm.<br>Closed Sunday &amp; Monday</p>
-<address>
-  <a href="https://www.google.com/maps/place/33+High+St/@39.994038,-74.7877038,17z/data=!3m1!4b1!4m2!3m1!1s0x89c14886bdda145f:0xba5561277263740e" target="win_map">33 High Street <br>
-    Mount Holly, New Jersey 08060</a>
-</address>
-<ul>
-  <li>Phone: 609-702-9949</li>
-  <li>Email: <a href="mailto:stacey@redwhitebrew.net">Stacey@redwhitebrew.net</a></li>
-</ul>
-            </div>
-          </div>
-          <div class="col span3-9">
-            <h3 class="is-hidden-mobile">Where to?</h3>
-            <ul class="footer-nav" id="nav-footer">
-              <li><a href="index.html">Home</a></li>
-<li><a href="wine.html">Wine</a></li>
-<li><a href="beer.html">Beer</a></li>
-<li><a href="spirits.html">Spirits</a></li>
-<li><a href="events.html">Events</a></li>
-<li><a href="about.html">About Us</a></li>
-            </ul>
-          </div>
+    <div id="sidr">
+      <div class="sidr-closeer">
+        <div class="pull-right">
+          <a class="button-xsmall pure-button sidr-close" href="#">Close</a>
         </div>
+        <p><i>Red, White and Brew</i></p>
       </div>
-    </footer>
-
-    <div class="navigation">
       <nav role="navigation">
         <ul class="nav-main" id="nav-main">
           <li><a href="index.html">Home</a></li>
-<li><a href="wine.html">Wine</a></li>
-<li><a href="beer.html">Beer</a></li>
-<li><a href="spirits.html">Spirits</a></li>
-<li><a href="events.html">Events</a></li>
-<li><a href="about.html">About Us</a></li>
+          <li><a href="wine.html">Wine</a></li>
+          <li><a href="beer.html">Beer</a></li>
+          <li><a href="spirits.html">Spirits</a></li>
+          <!-- <li><a href="#events">Events</a></li> -->
+          <li><a href="about.php">About Us</a></li>
         </ul>
       </nav>
     </div>
-
   </div>
 
-  <!-- <div class="global-branding is-hidden-mobile">
+  <div class="global-branding is-hidden-mobile">
     <img src="images/logo.jpg" height="94" width="255" alt="Red, White and Brew">
-  </div> -->
+  </div>
 
   <script src="js/scripts.js"></script>
   <!-- gruntjs live reload -->
