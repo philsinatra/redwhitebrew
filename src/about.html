@@ -12,6 +12,20 @@ Shared Head Content
 <style>
   .socialize a { margin: 0 5px; opacity: .8; }
   .socialize a:hover { opacity: 1; }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+  }
+  .video-container iframe,
+  .video-container object,
+  .video-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
 </style>
 </head>
 <body class="about">
@@ -38,8 +52,13 @@ Shared Head Content
                 <a href="https://plus.google.com/u/0/116412638171952757878?tab=wX#117805791652527472392/about" target="_blank"><img src="images/googleplus.png" height="40" width="40" alt="Google+"></a>
                 <a href="https://www.youtube.com/channel/UCTEAsvxhWhgUd1BHOA7oiqA" target="_blank"><img src="images/youtube.png" height="40" width="40" alt="YouTube"></a>
               </p>
-              <div class="glamore_shot">
+              <!-- <div class="glamore_shot">
                 <img src="images/IMG_1938.jpg" height="450" width="690" alt="store front">
+              </div> -->
+              <div class="is-centered">
+                <div class="video-container">
+                  <iframe src="http://www.youtube.com/embed/Z1icqgyB7Yo?rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
               </div>
               <h1 class="quote">
                 "A charming and creative boutique shop specializing in interesting and eclectic wine, beer and spirits."

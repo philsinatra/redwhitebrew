@@ -31,6 +31,7 @@ sup { color: black; }
 <script src="js/vendor/html5shiv.js"></script>
 <script src="js/vendor/respond.min.js"></script>
 <![endif]-->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 </head>
 <body class="index">
   <div class="wrapper">
@@ -66,6 +67,9 @@ sup { color: black; }
               <hr class="spacer">
               <p>Often referred to as the most eclectic collection of spirits in South Jersey, we at Red, White &amp; Brew pride ourselves in searching out the new, the amusing, the obscure. Unique name brands and interesting flavors is what you'll find here. And we ALWAYS have drink recipes available for you - we LOVE to make suggestions and research new products!</p>
               <p>We are the ONLY store in ALL of New Jersey that doesn't sell the BIG brands! Not only do we not sell the "Big 3" (Miller, Coors &amp; Bud) but we don't sell ANY of the other mass produced stuff - like Heineken, Corona or Michelob. We believe in well made craft beer. It is our passion and we LOVE to impart our decades of wisdom to our customers. We have been selling craft beers since the very beginning of this massive trend --- we have seen some come &amp; go (and come back again!) and have remained loyal and true to our favorite brands. We have built relationships with many brewers throughout the world because we believe THAT strongly in their products. Our selection is small but VERY mighty.</p>
+
+              <!-- <a class="video-intro" title="Test title" href="http://www.youtube.com/embed/Z1icqgyB7Yo?rel=0">Watch Video</a> -->
+              <a class="video-intro" title="Test title" href="https://www.youtube.com/watch?v=Z1icqgyB7Yo" style="display:none">Watch Video</a>
             </div>
             <div class="article-footer">
               <div class="sharethis">
@@ -135,5 +139,30 @@ sup { color: black; }
   <script src="js/scripts.js"></script>
 <!-- gruntjs live reload -->
 <!-- <script src="http://localhost:35729/livereload.js"></script> -->
+  <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script>
+  $(function() {
+    $('.video-intro').magnificPopup({
+      type: 'iframe',
+
+      iframe: {
+         markup: '<div class="mfp-iframe-scaler">'+
+                    '<div class="mfp-close"></div>'+
+                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                    '<div class="mfp-title">Some caption</div>'+
+                  '</div>'
+      },
+      callbacks: {
+        markupParse: function(template, values, item) {
+         values.title = item.el.attr('title');
+        }
+      }
+    });
+
+    window.setTimeout(function() {
+      $('.video-intro').trigger('click');
+    }, 1000);
+  });
+  </script>
 </body>
 </html>
