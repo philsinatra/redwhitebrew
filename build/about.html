@@ -48,6 +48,37 @@ sup { color: black; }
       width: 100%;
       height: 100%;
   }
+  span.link { display: none; }
+
+  .link,
+  .link a,
+  #SignUp .signupframe {
+    background-color: transparent;
+    border: none;
+    font-family: 'Quattrocento', "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    margin-bottom: 20px;
+    padding: 20px;
+    /*color: #226699;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;*/
+    }
+    .link,
+    .link a {
+      text-decoration: none;
+      }
+    #SignUp .signupframe {
+      /*border: 1px solid #000000;
+      background: #ffffff;*/
+      }
+  #SignUp .signupframe .required {
+    /*font-size: 10px;*/
+    }
+    #SignUp input[type="submit"] {
+      min-height: 26px;
+      margin-top: 10px;
+    }
+    #SignUp input[type="text"] { padding: 5px; }
+
 </style>
 </head>
 <body class="about">
@@ -87,8 +118,14 @@ sup { color: black; }
               </h1>
               <hr class="spacer">
               <p>That's what we always envisioned and what we always wanted - a small yet full shop where special attention to selection and our customers came first.  Our mission was simple:  Introduce fun to those who don't know it and emphasize it to those who do!</p>
-              <hr class="spacer">
-              <h3 class="is-centered"><a href="http://goo.gl/maps/VRGG8" target="_blank">Have A Look Inside</a></h3>
+
+              <h2>E-Newsletter Signup</h2>
+              <p>Sign up for our e-newsletter and we'll send tasty treats and sale information right to your inbox. Don't worry, we'll never share your email address with anyone.</p>
+              <script type="text/javascript" src="//app.icontact.com/icp/loadsignup.php/form.js?c=292017&l=66951&f=9759"></script>
+              <span class="link"><a href="http://www.icontact.com">Email Marketing</a> You Can Trust</span>
+
+              <!-- <hr class="spacer"> -->
+              <h3 class="is-centered">Not Convinced? <a href="http://goo.gl/maps/VRGG8" target="_blank">Have A Look Inside</a></h3>
               <div class="glamore_shot"><img src="images/IMG_1941.jpg" height="450" width="690" alt="inside Red, White and Brew"></div>
               <hr class="spacer">
               <p>At Red, White &amp; Brew we weed out the mediocre stuff and search out wines, beers &amp; liquors that are truly special and different.  We want our store to be a haven to the wine lover; a destination spot for the beer maven and an oasis to those who enjoy fine spirits.  We welcome special requests and we get to know our clientele - so we know what works well in our store.</p>
@@ -192,6 +229,11 @@ sup { color: black; }
   </div> -->
 
   <script src="js/scripts.js"></script>
+  <script>
+  $(function() {
+    $('.signupframe tbody tr:nth-child(8)').css('display','none');
+  });
+  </script>
   <!-- gruntjs live reload -->
   <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 </body>
